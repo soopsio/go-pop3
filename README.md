@@ -5,7 +5,7 @@ This is a simple POP3 client package in Go language.
 
 ##Usage
 ```go
-if err := pop3.ReceiveMail(address, user, pass,
+if err := pop3.ReceiveMail(address, user, pass,false
 	func(number int, uid, data string, err error) (bool, error) {
 		log.Printf("%d, %s\n", number, uid)
 
@@ -18,7 +18,7 @@ if err := pop3.ReceiveMail(address, user, pass,
 ```
 or use the method that implements the command  
 ```go
-client, err := pop3.Dial(address)
+client, err := pop3.Dial(address,false)
 
 if err != nil {
 	log.Fatalf("Error: %v\n", err)
